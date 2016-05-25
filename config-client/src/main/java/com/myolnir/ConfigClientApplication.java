@@ -8,17 +8,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
-@RefreshScope
 @RestController
+@RefreshScope
 public class ConfigClientApplication {
 
     @Value("${spring.hello.name}")
-    String url;
+    String name;
 
 
-    @RequestMapping("/")
+    @RequestMapping("/hello")
     String hello() {
-        return "Hello " + url + "!";
+        return "Hello " + name + "!";
     }
 
 	public static void main(String[] args) {
